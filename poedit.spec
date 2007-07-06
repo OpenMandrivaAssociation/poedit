@@ -1,23 +1,14 @@
-%define	name	poedit
-%define	version	1.3.7
-%define release	%mkrel 1
-
-%define	section	More Applications/Editors
-%define	title	Poedit
-
-%define	Summary	Gettext translation file editor
-
-Summary:	%Summary
-Name:		%name
-Version:	%version
-Release:	%release
+Summary:	Gettext translation file editor
+Name:		poedit
+Version:	1.3.7
+Release:	%mkrel 1
 License:	MIT
 Group:		Editors
 URL:		http://www.poedit.org
 Source0:	%{name}-%{version}.tar.bz2
 BuildRoot:      %_tmppath/%{name}-%{version}-buildroot
 Requires:	gettext
-BuildRequires:	wxgtku-devel >= 2.8
+BuildRequires:	wxgtku2.8-devel
 BuildRequires:	libdb4.5-devel
 BuildRequires:	gtkspell-devel
 BuildRequires:	zip
