@@ -1,6 +1,6 @@
 %define	name	poedit
-%define	version	1.3.6
-%define release	%mkrel 3
+%define	version	1.3.7
+%define release	%mkrel 1
 
 %define	section	More Applications/Editors
 %define	title	Poedit
@@ -46,27 +46,9 @@ existing catalogs from source code by single click.
 %__rm -rf %{buildroot}
 %makeinstall_std
 
-
-# menu
-%__mkdir_p %buildroot%_menudir
-cat > %buildroot%_menudir/%name << EOF
-?package(%name): \
-command="%_bindir/%name" \
-needs="X11" \
-icon="%name.png" \
-section="%section" \
-title="%title" \
-mimetypes="application/x-po,application/x-gettext,application/x-gettext-translation,text/x-gettext-translation,text/x-gettext-translation-template" \
-accept_url="true" \
-multiple_files="true" \
-longtitle="%Summary" \
-xdg="true"
-EOF
-
 desktop-file-install --vendor="" \
   --remove-category="Application" \
   --add-category="GNOME" \
-  --add-category="X-MandrivaLinux-MoreApplications-Editors;TextEditor" \
   --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
 
 
@@ -99,13 +81,9 @@ popd
 %doc NEWS README AUTHORS COPYING TODO docs/technote.txt
 %dir %{_datadir}/poedit
 %{_bindir}/poedit
-%{_menudir}/%{name}
 %{_iconsdir}/*
 %{_mandir}/man1/*
 %{_datadir}/poedit/help/*
 %{_datadir}/poedit/icons/*
 %{_datadir}/applications/*.desktop
 %{_datadir}/pixmaps/*
-
-
-
