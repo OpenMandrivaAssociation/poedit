@@ -8,7 +8,7 @@ URL:		http://www.poedit.org
 Source0:	%{name}-%{version}.tar.bz2
 BuildRoot:      %_tmppath/%{name}-%{version}-buildroot
 Requires:	gettext
-BuildRequires:	wxgtku2.8-devel
+BuildRequires:	wxgtku-devel >= 2.8
 BuildRequires:	libdb4.5-devel
 BuildRequires:	gtkspell-devel
 BuildRequires:	zip
