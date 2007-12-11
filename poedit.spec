@@ -1,18 +1,18 @@
 Summary:	Gettext translation file editor
 Name:		poedit
-Version:	1.3.7
+Version:	1.3.9
 Release:	%mkrel 1
 License:	MIT
 Group:		Editors
 URL:		http://www.poedit.org
-Source0:	%{name}-%{version}.tar.bz2
+Source0:	http://nchc.dl.sourceforge.net/sourceforge/poedit/%{name}-%{version}.tar.gz
+Patch0:		poedit-1.3.9-fix-desktop-file.patch
 BuildRoot:      %_tmppath/%{name}-%{version}-buildroot
 Requires:	gettext
 BuildRequires:	wxgtku-devel >= 2.8
 BuildRequires:	libdb4.5-devel
 BuildRequires:	gtkspell-devel
 BuildRequires:	zip
-BuildRequires:	desktop-file-utils
 Requires(Pre):	shared-mime-info
 Requires(post): desktop-file-utils
 Requires(postun): desktop-file-utils
@@ -27,6 +27,7 @@ existing catalogs from source code by single click.
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
 # wx-config is brain-damaged. Damn you, multiarch, damn you
@@ -36,12 +37,6 @@ existing catalogs from source code by single click.
 %install
 %__rm -rf %{buildroot}
 %makeinstall_std
-
-desktop-file-install --vendor="" \
-  --remove-category="Application" \
-  --add-category="GNOME" \
-  --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
-
 
 # remove files not bundled
 %__rm -f %{buildroot}/%{_iconsdir}/poedit.xpm
