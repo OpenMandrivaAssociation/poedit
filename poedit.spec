@@ -4,7 +4,7 @@ Version:	1.3.9
 Release:	%mkrel 1
 License:	MIT
 Group:		Editors
-URL:		http://www.poedit.org
+URL:		http://www.poedit.net
 Source0:	http://nchc.dl.sourceforge.net/sourceforge/poedit/%{name}-%{version}.tar.gz
 Patch0:		poedit-1.3.9-fix-desktop-file.patch
 BuildRoot:      %_tmppath/%{name}-%{version}-buildroot
@@ -18,7 +18,7 @@ Requires(post): desktop-file-utils
 Requires(postun): desktop-file-utils
 
 %description
-poEdit is cross-platform gettext catalogs (.po files) editor. It is built with
+Poedit is cross-platform gettext catalogs (.po files) editor. It is built with
 wxWindows toolkit and can run on Unix or Windows. It aims to provide convenient
 way of editing gettext catalogs. It features UTF-8 support, fuzzy and
 untranslated records highlighting, whitespaces highlighting, references
