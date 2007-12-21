@@ -7,6 +7,7 @@ Group:		Editors
 URL:		http://www.poedit.net
 Source0:	http://nchc.dl.sourceforge.net/sourceforge/poedit/%{name}-%{version}.tar.gz
 Patch0:		poedit-1.3.9-fix-desktop-file.patch
+BuildRoot:      %_tmppath/%{name}-%{version}-buildroot
 Requires:	gettext
 BuildRequires:	wxgtku-devel >= 2.8
 BuildRequires:	libdb4.5-devel
