@@ -1,7 +1,7 @@
 Summary:	Gettext translation file editor
 Name:		poedit
 Version:	1.3.9
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	MIT
 Group:		Editors
 URL:		http://www.poedit.net
@@ -10,7 +10,7 @@ Patch0:		poedit-1.3.9-fix-desktop-file.patch
 BuildRoot:      %_tmppath/%{name}-%{version}-buildroot
 Requires:	gettext
 BuildRequires:	wxgtku-devel >= 2.8
-BuildRequires:	libdb4.5-devel
+BuildRequires:	libdb4.6-devel
 BuildRequires:	gtkspell-devel
 BuildRequires:	zip
 Requires(Pre):	shared-mime-info
