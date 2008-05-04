@@ -1,7 +1,7 @@
 Summary:	Gettext translation file editor
 Name:		poedit
-Version:	1.3.9
-Release:	%mkrel 2
+Version:	1.4.1
+Release:	%mkrel 1
 License:	MIT
 Group:		Editors
 URL:		http://www.poedit.net
@@ -64,7 +64,7 @@ popd
 
 %files -f %{name}.lang
 %defattr(-,root,root)
-%doc NEWS README AUTHORS COPYING TODO docs/technote.txt
+%doc NEWS README AUTHORS COPYING TODO 
 %dir %{_datadir}/poedit
 %{_bindir}/poedit
 %{_iconsdir}/*
