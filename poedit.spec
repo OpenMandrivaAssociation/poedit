@@ -1,7 +1,7 @@
 Summary:	Gettext translation file editor
 Name:		poedit
 Version:	1.4.2
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	MIT
 Group:		Editors
 URL:		http://www.poedit.net
@@ -40,14 +40,6 @@ existing catalogs from source code by single click.
 
 # remove files not bundled
 %__rm -f %{buildroot}/%{_iconsdir}/poedit.xpm
-
-# (Abel) 1.3.3-1mdk Fix(?) locale file paths
-pushd %{buildroot}%{_datadir}/locale
-%__mv af_ZA af
-%__mv zh_CN zh
-%__mv zh_TW zh
-%__mv sq_AL sq
-popd
 
 %find_lang %{name}
 
