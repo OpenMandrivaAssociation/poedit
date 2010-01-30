@@ -8,9 +8,10 @@ URL:		http://www.poedit.net
 Source0:	http://nchc.dl.sourceforge.net/sourceforge/poedit/%{name}-%{version}.tar.gz
 Requires:	gettext
 BuildRequires:	wxgtku-devel >= 2.8
-BuildRequires:	db4.8-devel
+BuildRequires:	db-devel
 BuildRequires:	gtkspell-devel
 BuildRequires:	zip
+BuildRequires:	desktop-file-utils
 Requires(Pre):	shared-mime-info
 Requires(post): desktop-file-utils
 Requires(postun): desktop-file-utils
