@@ -34,7 +34,7 @@ existing catalogs from source code by single click.
 %make
 
 %install
-%__rm -rf %{buildroot}
+rm -rf %{buildroot}
 %makeinstall_std
 
 desktop-file-install \
@@ -43,24 +43,12 @@ desktop-file-install \
    %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 # remove files not bundled
-%__rm -f %{buildroot}/%{_iconsdir}/poedit.xpm
+rm -f %{buildroot}/%{_iconsdir}/poedit.xpm
 
 %find_lang %{name}
 
-%if %mdkversion < 200900
-%post
-%update_menus
-%update_desktop_database
-%endif
-
-%if %mdkversion < 200900
-%postun
-%clean_menus
-%clean_desktop_database
-%endif
-
 %clean
-%__rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 %files -f %{name}.lang
 %defattr(-,root,root)
