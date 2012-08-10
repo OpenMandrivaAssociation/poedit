@@ -1,11 +1,11 @@
 Summary:	Gettext translation file editor
 Name:		poedit
-Version:	1.4.6.1
-Release:	4
+Version:	1.5.2
+Release:	1
 License:	MIT
 Group:		Editors
 URL:		http://www.poedit.net
-Source0:	http://nchc.dl.sourceforge.net/sourceforge/poedit/%{name}-%{version}.tar.gz
+Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 Requires:	gettext
 BuildRequires:	wxgtku-devel >= 2.8
 BuildRequires:	db-devel
@@ -13,9 +13,7 @@ BuildRequires:	gtkspell-devel
 BuildRequires:	zip
 BuildRequires:	desktop-file-utils
 Requires(Pre):	shared-mime-info
-Requires(post): desktop-file-utils
-Requires(postun): desktop-file-utils
-BuildRoot:      %{_tmppath}/%{name}-%{version}-buildroot
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 Poedit is cross-platform gettext catalogs (.po files) editor. It is built with
@@ -34,7 +32,6 @@ existing catalogs from source code by single click.
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
 desktop-file-install \
@@ -47,11 +44,7 @@ rm -f %{buildroot}/%{_iconsdir}/poedit.xpm
 
 %find_lang %{name}
 
-%clean
-rm -rf %{buildroot}
-
 %files -f %{name}.lang
-%defattr(-,root,root)
 %doc NEWS README AUTHORS TODO 
 %dir %{_datadir}/poedit
 %{_bindir}/poedit
