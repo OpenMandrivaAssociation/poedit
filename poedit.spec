@@ -6,12 +6,14 @@ License:	MIT
 Group:		Editors
 URL:		http://www.poedit.net
 Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+
 Requires:	gettext
 BuildRequires:	wxgtku-devel >= 2.8
 BuildRequires:	db-devel
 BuildRequires:	gtkspell-devel
 BuildRequires:	zip
 BuildRequires:	desktop-file-utils
+BuildRequires:	boost-devel
 Requires(Pre):	shared-mime-info
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
