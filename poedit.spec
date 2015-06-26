@@ -1,6 +1,6 @@
 Summary:	Gettext translation file editor
 Name:		poedit
-Version:	1.6.5
+Version:	1.8.1
 Release:	1
 License:	MIT
 Group:		Editors
@@ -8,12 +8,13 @@ URL:		http://www.poedit.net
 Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 
 Requires:	gettext
-BuildRequires:	wxgtku-devel >= 2.8
+BuildRequires:	wxgtku3.0-devel
 BuildRequires:	db-devel
 BuildRequires:	gtkspell-devel
 BuildRequires:	zip
 BuildRequires:	desktop-file-utils
 BuildRequires:	boost-devel
+BuildRequires:	lucene++-devel
 Requires(Pre):	shared-mime-info
 
 %description
@@ -29,7 +30,7 @@ existing catalogs from source code by single click.
 
 %build
 # wx-config is brain-damaged. Damn you, multiarch, damn you
-%configure2_5x --with-wx-config=%{_bindir}/wx-config-unicode
+%configure2_5x --disable-legacytm
 %make
 
 %install
@@ -46,7 +47,7 @@ rm -f %{buildroot}/%{_iconsdir}/poedit.xpm
 %find_lang %{name}
 
 %files -f %{name}.lang
-%doc NEWS README AUTHORS TODO 
+%doc NEWS README AUTHORS
 %dir %{_datadir}/poedit
 %{_bindir}/poedit
 %{_iconsdir}/*
