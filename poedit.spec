@@ -52,6 +52,7 @@ rm -f %{buildroot}/%{_iconsdir}/poedit.xpm
 %{_bindir}/poedit
 %{_iconsdir}/*
 %{_mandir}/man1/*
+%dir %{_datadir}/poedit/icons
 %{_datadir}/poedit/icons/*
 %{_datadir}/applications/*.desktop
 %{_datadir}/pixmaps/*
