@@ -1,11 +1,11 @@
 Summary:	Gettext translation file editor
 Name:		poedit
-Version:	1.8.1
+Version:	1.8.7.1
 Release:	1
 License:	MIT
 Group:		Editors
 URL:		http://www.poedit.net
-Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+Source0:	https://github.com/vslavik/poedit/releases/download/v%{version}-oss/poedit-%{version}.tar.gz
 
 Requires:	gettext
 BuildRequires:	wxgtku3.0-devel

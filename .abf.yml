@@ -1,4 +1,5 @@
 removed_sources:
   poedit-1.6.5.tar.gz: f33e71d24b553aa6d8687be7ed529d7ce79241f4
-sources:
   poedit-1.8.1.tar.gz: 6c0a84ac7ca57055f79e0eb9c32a891f7fa92440
+sources:
+  poedit-1.8.7.1.tar.gz: 1b1be55992985094b10877e749816415b297f52a
