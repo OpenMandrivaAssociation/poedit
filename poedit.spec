@@ -1,6 +1,6 @@
 Summary:	Gettext translation file editor
 Name:		poedit
-Version:	1.8.7.1
+Version:	2.2
 Release:	1
 License:	MIT
 Group:		Editors
@@ -39,7 +39,7 @@ existing catalogs from source code by single click.
 desktop-file-install \
   --add-category="GTK;GNOME;" \
   --dir=%{buildroot}%{_datadir}/applications \
-   %{buildroot}%{_datadir}/applications/%{name}.desktop
+   %{buildroot}%{_datadir}/applications/net.poedit.Poedit.desktop
 
 # remove files not bundled
 rm -f %{buildroot}/%{_iconsdir}/poedit.xpm
@@ -55,6 +55,7 @@ rm -f %{buildroot}/%{_iconsdir}/poedit.xpm
 %dir %{_datadir}/poedit/icons
 %{_datadir}/poedit/icons/*
 %{_datadir}/applications/*.desktop
+%{_datadir}/appdata/*.xml
 %{_datadir}/pixmaps/*
 
 
