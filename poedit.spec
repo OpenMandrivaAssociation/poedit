@@ -15,7 +15,7 @@ BuildRequires:	zip
 BuildRequires:	desktop-file-utils
 BuildRequires:	boost-devel
 BuildRequires:	lucene++-devel
-Requires(Pre):	shared-mime-info
+Requires(pre):	shared-mime-info
 
 %description
 Poedit is cross-platform gettext catalogs (.po files) editor. It is built with
