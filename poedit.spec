@@ -5,8 +5,7 @@ Release:	1
 License:	MIT
 Group:		Editors
 URL:		http://www.poedit.net
-# Source0:	https://github.com/vslavik/poedit/releases/download/v%{version}-oss/poedit-%{version}.tar.gz
-Source0:	https://github.com/vslavik/poedit/archive/v%{version}-oss/poedit-%{version}.tar.gz
+Source0:	https://github.com/vslavik/poedit/releases/download/v%{version}-oss/poedit-%{version}.tar.gz
 
 Requires:	gettext
 BuildRequires:	wxgtku3.0-devel
