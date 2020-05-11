@@ -29,33 +29,24 @@ existing catalogs from source code by single click.
 %setup -q
 
 %build
-# wx-config is brain-damaged. Damn you, multiarch, damn you
-%configure2_5x --disable-legacytm
-%make
+%configure --disable-legacytm
+%make_build
 
 %install
-%makeinstall_std
-
-desktop-file-install \
-  --add-category="GTK;GNOME;" \
-  --dir=%{buildroot}%{_datadir}/applications \
-   %{buildroot}%{_datadir}/applications/net.poedit.Poedit.desktop
+%make_install
 
 # remove files not bundled
-rm -f %{buildroot}/%{_iconsdir}/poedit.xpm
+rm -f %{buildroot}%{_iconsdir}/poedit.xpm
 
 %find_lang %{name}
 
 %files -f %{name}.lang
 %doc NEWS README AUTHORS
-%dir %{_datadir}/poedit
-%{_bindir}/poedit
-%{_iconsdir}/*
-%{_mandir}/man1/*
-%dir %{_datadir}/poedit/icons
-%{_datadir}/poedit/icons/*
-%{_datadir}/applications/*.desktop
-%{_datadir}/appdata/*.xml
-%{_datadir}/pixmaps/*
-
+%license COPYING
+%{_bindir}/%{name}
+%{_datadir}/%{name}/
+%{_metainfodir}/net.%{name}.Poedit.appdata.xml
+%{_datadir}/applications/*%{name}*.desktop
+%{_iconsdir}/hicolor/*/apps/*%{name}*.png
+%{_mandir}/man1/%{name}.1.*
 
