@@ -6,6 +6,7 @@ License:	MIT
 Group:		Editors
 URL:		http://www.poedit.net
 Source0:	https://github.com/vslavik/poedit/releases/download/v%{version}-oss/poedit-%{version}.tar.gz
+Patch0:   https://patch-diff.githubusercontent.com/raw/vslavik/poedit/pull/653.patch
 
 Requires:	gettext
 BuildRequires:  pkgconfig(icu-uc)
@@ -28,6 +29,7 @@ existing catalogs from source code by single click.
 
 %prep
 %setup -q
+%autopatch -p1
 
 %build
 %configure
