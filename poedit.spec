@@ -8,6 +8,7 @@ URL:		http://www.poedit.net
 Source0:	https://github.com/vslavik/poedit/releases/download/v%{version}-oss/poedit-%{version}.tar.gz
 
 Requires:	gettext
+BuildRequires:  pkgconfig(icu-uc)
 BuildRequires:	wxgtku3.0-devel
 BuildRequires:	db-devel
 BuildRequires:	gtkspell3-devel
@@ -29,7 +30,8 @@ existing catalogs from source code by single click.
 %setup -q
 
 %build
-%configure --disable-legacytm
+%configure
+#configure --disable-legacytm
 %make_build
 
 %install
