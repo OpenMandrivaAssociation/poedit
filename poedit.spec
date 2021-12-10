@@ -1,6 +1,6 @@
 Summary:	Gettext translation file editor
 Name:		poedit
-Version:	2.4.3
+Version:	3.0.1
 Release:	1
 License:	MIT
 Group:		Editors
