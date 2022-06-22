@@ -10,6 +10,7 @@ Source0:	https://github.com/vslavik/poedit/releases/download/v%{version}-oss/poe
 Requires:	gettext
 BuildRequires:  pkgconfig(icu-uc)
 BuildRequires:	wxgtku3.0-devel
+BuildRequires:  %{_lib}wxu3.1-devel
 BuildRequires:	db-devel
 BuildRequires:	gtkspell3-devel
 BuildRequires:	zip
