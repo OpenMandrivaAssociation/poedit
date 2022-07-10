@@ -1,6 +1,6 @@
 Summary:	Gettext translation file editor
 Name:		poedit
-Version:	3.1
+Version:	3.1.1
 Release:	1
 License:	MIT
 Group:		Editors
@@ -10,7 +10,7 @@ Source0:	https://github.com/vslavik/poedit/releases/download/v%{version}-oss/poe
 Requires:	gettext
 BuildRequires:  pkgconfig(icu-uc)
 #BuildRequires:	wxgtku3.0-devel
-BuildRequires:  %{_lib}wxu3.1-devel
+BuildRequires:  %{_lib}wxu3.2-devel
 BuildRequires:	db-devel
 BuildRequires:	gtkspell3-devel
 BuildRequires:	zip
