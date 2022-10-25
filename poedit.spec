@@ -10,13 +10,15 @@ Source0:	https://github.com/vslavik/poedit/releases/download/v%{version}-oss/poe
 Requires:	gettext
 BuildRequires:  pkgconfig(icu-uc)
 #BuildRequires:	wxgtku3.0-devel
-BuildRequires:  %{_lib}wxu3.2-devel
+BuildRequires:  wxgtk-devel
 BuildRequires:	db-devel
 BuildRequires:	gtkspell3-devel
 BuildRequires:	zip
 BuildRequires:	desktop-file-utils
 BuildRequires:	boost-devel
 BuildRequires:	lucene++-devel
+BuildRequires:  pkgconfig(pugixml)
+
 Requires(pre):	shared-mime-info
 
 %description
@@ -32,7 +34,7 @@ existing catalogs from source code by single click.
 %autopatch -p1
 
 %build
-%configure --with-wx-config=/usr/bin/wx-config-3.2
+%configure --with-wx-config=/usr/bin/wx-config-3.2 --with-cpprest
 
 %make_build
 
