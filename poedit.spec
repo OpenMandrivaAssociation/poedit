@@ -34,8 +34,7 @@ existing catalogs from source code by single click.
 %autopatch -p1
 
 %build
-%configure --with-wx-config=/usr/bin/wx-config-3.2 --with-cpprest
-
+%configure --with-wx-config=/usr/bin/wx-config-3.2
 %make_build
 
 %install
