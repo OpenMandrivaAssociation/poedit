@@ -1,6 +1,6 @@
 Summary:	Gettext translation file editor
 Name:		poedit
-Version:	3.2
+Version:	3.3.1
 Release:	1
 License:	MIT
 Group:		Editors
@@ -30,8 +30,7 @@ browser, headers editing and can be used to create new catalogs or update
 existing catalogs from source code by single click.
 
 %prep
-%setup -q
-%autopatch -p1
+%autosetup -p1
 
 %build
 %configure --with-wx-config=/usr/bin/wx-config-3.2
