@@ -48,7 +48,7 @@ existing catalogs from source code by single click.
 %build
 export WXRC=/usr/bin/wxrc-%{wxver}
 %configure --with-wx-config=%{_libdir}/wx/config/gtk3-unicode-%{wxver}
-%make_build
+%make_build -j1
 
 %install
 %make_install
