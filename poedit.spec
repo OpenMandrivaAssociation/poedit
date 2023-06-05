@@ -1,4 +1,3 @@
-%define _disable_lto 1
 %global wxver 3.2
 
 Summary:	Gettext translation file editor
@@ -12,14 +11,16 @@ Source0:	https://github.com/vslavik/poedit/releases/download/v%{version}-oss/poe
 
 BuildRequires:	gettext
 BuildRequires:	boost-devel
+BuildRequires:	cld2-devel
 BuildRequires:	db-devel
 BuildRequires:	%{_lib}wxu%{wxver}-devel
+BuildRequires:	pkgconfig(cpprest)
 BuildRequires:	pkgconfig(gtkspell3-3.0)
-BuildRequires:  pkgconfig(icu-uc)
+BuildRequires:	pkgconfig(icu-uc)
 BuildRequires:	pkgconfig(liblucene++)
-BuildRequires:  pkgconfig(libsecret-1)
-BuildRequires:  pkgconfig(pugixml)
-BuildRequires:  wxgtk-devel
+BuildRequires:	pkgconfig(libsecret-1)
+BuildRequires:	pkgconfig(pugixml)
+BuildRequires:	wxgtk-devel
 BuildRequires:	zip
 
 %description
