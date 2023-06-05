@@ -1,3 +1,4 @@
+%define _disable_lto 1
 %global wxver 3.2
 
 Summary:	Gettext translation file editor
@@ -48,7 +49,7 @@ existing catalogs from source code by single click.
 %build
 export WXRC=/usr/bin/wxrc-%{wxver}
 %configure --with-wx-config=%{_libdir}/wx/config/gtk3-unicode-%{wxver}
-%make_build -j1
+%make_build
 
 %install
 %make_install
