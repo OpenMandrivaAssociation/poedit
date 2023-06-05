@@ -35,7 +35,6 @@ existing catalogs from source code by single click.
 %{_bindir}/%{name}
 %{_datadir}/%{name}/
 %{_datadir}/applications/*%{name}*.desktop
-#{_datadir}/pixmaps/%{name}.xpm
 %{_iconsdir}/hicolor/*/apps/*%{name}*.png
 %{_iconsdir}/hicolor/*/apps/*Poedit*.svg
 %{_metainfodir}/net.%{name}.Poedit.appdata.xml
@@ -47,15 +46,12 @@ existing catalogs from source code by single click.
 %autosetup -p1
 
 %build
+export WXRC=/usr/bin/wxrc-%{wxver}
 %configure --with-wx-config=%{_libdir}/wx/config/gtk3-unicode-%{wxver}
 %make_build
 
 %install
 %make_install
-
-# fix pixmap icon path
-#install -dm 0755 %{buildroot}%{_datadir}/pixmaps/
-#mv -f %{buildroot}%{_iconsdir}/poedit.xpm %{buildroot}%{_datadir}/pixmaps/
 
 # locales
 %find_lang %{name}
