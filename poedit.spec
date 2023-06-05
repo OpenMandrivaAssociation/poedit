@@ -1,3 +1,5 @@
+%global wxver 3.2
+
 Summary:	Gettext translation file editor
 Name:		poedit
 Version:	3.3.1
@@ -7,19 +9,17 @@ Group:		Editors
 URL:		http://www.poedit.net
 Source0:	https://github.com/vslavik/poedit/releases/download/v%{version}-oss/poedit-%{version}.tar.gz
 
-Requires:	gettext
-BuildRequires:  pkgconfig(icu-uc)
-BuildRequires:	%{_lib}wxu3.2-devel
-BuildRequires:  wxgtk-devel
-BuildRequires:	db-devel
-BuildRequires:	gtkspell3-devel
-BuildRequires:	zip
-BuildRequires:	desktop-file-utils
+BuildRequires:	gettext
 BuildRequires:	boost-devel
-BuildRequires:	lucene++-devel
+BuildRequires:	db-devel
+BuildRequires:	%{_lib}wxu%{wxver}-devel
+BuildRequires:	pkgconfig(gtkspell3-3.0)
+BuildRequires:  pkgconfig(icu-uc)
+BuildRequires:	pkgconfig(liblucene++)
+BuildRequires:  pkgconfig(libsecret-1)
 BuildRequires:  pkgconfig(pugixml)
-
-Requires(pre):	shared-mime-info
+BuildRequires:  wxgtk-devel
+BuildRequires:	zip
 
 %description
 Poedit is cross-platform gettext catalogs (.po files) editor. It is built with
@@ -29,28 +29,34 @@ untranslated records highlighting, whitespaces highlighting, references
 browser, headers editing and can be used to create new catalogs or update
 existing catalogs from source code by single click.
 
+%files -f %{name}.lang
+%license COPYING
+%doc NEWS README.md AUTHORS
+%{_bindir}/%{name}
+%{_datadir}/%{name}/
+%{_datadir}/applications/*%{name}*.desktop
+#{_datadir}/pixmaps/%{name}.xpm
+%{_iconsdir}/hicolor/*/apps/*%{name}*.png
+%{_iconsdir}/hicolor/*/apps/*Poedit*.svg
+%{_metainfodir}/net.%{name}.Poedit.appdata.xml
+%{_mandir}/man1/%{name}.1.*
+
+#----------------------------------------------------------------------------
+
 %prep
 %autosetup -p1
 
 %build
-%configure --with-wx-config=/usr/bin/wx-config-3.2
+%configure --with-wx-config=%{_libdir}/wx/config/gtk3-unicode-%{wxver}
 %make_build
 
 %install
 %make_install
 
-# remove files not bundled
-rm -f %{buildroot}%{_iconsdir}/poedit.xpm
+# fix pixmap icon path
+#install -dm 0755 %{buildroot}%{_datadir}/pixmaps/
+#mv -f %{buildroot}%{_iconsdir}/poedit.xpm %{buildroot}%{_datadir}/pixmaps/
 
+# locales
 %find_lang %{name}
-
-%files -f %{name}.lang
-%doc NEWS README AUTHORS
-%license COPYING
-%{_bindir}/%{name}
-%{_datadir}/%{name}/
-%{_metainfodir}/net.%{name}.Poedit.appdata.xml
-%{_datadir}/applications/*%{name}*.desktop
-%{_iconsdir}/hicolor/*/apps/*%{name}*.png
-%{_mandir}/man1/%{name}.1.*
 
