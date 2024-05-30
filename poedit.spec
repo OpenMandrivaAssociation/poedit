@@ -3,7 +3,7 @@
 Summary:	Gettext translation file editor
 Name:		poedit
 Version:	3.4.4
-Release:	1
+Release:	2
 License:	MIT
 Group:		Editors
 URL:		https://www.poedit.net
