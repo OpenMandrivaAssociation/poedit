@@ -9,6 +9,11 @@ Group:		Editors
 URL:		https://www.poedit.net
 Source0:	https://github.com/vslavik/poedit/releases/download/v%{version}-oss/poedit-%{version}.tar.gz
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	gettext
 BuildRequires:	boost-devel
 BuildRequires:	cld2-devel
